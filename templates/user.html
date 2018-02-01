@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> User info </title>
+  	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../static/login.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a.i {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+
+
+
+<style>
+.button {
+    position: relative;
+    background-color: #4CAF50;
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.button:after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+.img{
+  width: 100%;
+}
+</style>
+
+
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"><p class="navbartitle">DabaBrain</p></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li ><a href="/brain-anatomy">Brain mapping</a></li>
+      <li ><a href="/neurotransmitters">Neurotransmitters</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li ><a href="/question"> <b>Q&A</b></a></li>
+      {%if current_user != "Not Logged In"%}
+      <li class="active"><a href="/user"><span class="glyphicon glyphicon-user"></span>  {{ current_user.username }} </a></li>
+      <li ><a href="/logout"><span class="glyphicon glyphicon-log-in"></span>  Logout</a></li>
+      {%else%}
+      <li ><a href="/login"><span class="glyphicon glyphicon-log-in"></span>  Login</a></li>
+      
+      {%endif%}
+    </ul>
+  </div>
+</nav>
+
+<br>
+
+
+
+
+
+<h2 style="text-align:center">{{ current_user.name }}</h2>
+
+<div class="card">
+  <!--<img src="/w3images/team2.jpg" alt="" style="width:100%">-->
+  <h1>{{ current_user.username }}</h1>
+  <p class="title">{{ current_user.degree }}</p>
+  
+  <div style="margin: 24px 0;">
+    <a href="#" class="i"><i class="fa fa-dribbble"></i></a> 
+    <a href="#" class="i"><i class="fa fa-twitter"></i></a>  
+    <a href="#" class="i"><i class="fa fa-linkedin"></i></a>  
+    <a href="#" class="i"><i class="fa fa-facebook"></i></a> 
+ </div>
+ <p><button>Contact</button></p>
+</div>
+
+
+      <form action=" {{ url_for('logout') }}">
+
+      	<input class="button" type="submit" value="Log out">
+      </form>
+
+
+  </body>
+</html>

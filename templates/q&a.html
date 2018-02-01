@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Q&A </title>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="../static/q&a.css">
+
+<body class="login">
+
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"><p class="navbartitle">DabaBrain</p></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li ><a href="/brain-anatomy">Brain mapping</a></li>
+      <li ><a href="/neurotransmitters">Neurotransmitters</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="active"><a href="/question"> <b>Q&A</b></a></li>
+      {%if current_user != "Not Logged In"%}
+      <li ><a href="/user"><span class="glyphicon glyphicon-user"></span>  {{ current_user.username }} </a></li>
+      <li ><a href="/logout"><span class="glyphicon glyphicon-log-in"></span>  Logout</a></li>
+      {%else%}
+      <li ><a href="/login"><span class="glyphicon glyphicon-log-in"></span>  Login</a></li>
+      
+      {%endif%}
+    </ul>
+  </div>
+</nav>
+
+
+     
+
+
+
+{%if current_user != "Not Logged In"%}
+
+			<div id="add_question">
+					<h1> Have a question? </h1>
+					<h2> Post it here and you'll get your answer! </h2>
+
+
+					<form method='POST' action="{{ url_for('question')}}">
+					  <input type="text" name="title" value="">
+					  <input type="text" name="question" value="">
+					  <input type="submit" value="Post">
+					</form>
+			</div>
+{%endif%}
+
+<div class="all_comments">
+<br>
+{% for question in all_questions %}
+<div class="single_comment">
+<div>
+<div> <img class="profile_pic" src="https://plan.calimoto.eu/tourenplaner/res/images/general/profile_round.png" height="50" width="50" alt="profile_pic"> </div>
+<div>
+<br>	
+<p class="username"> <b> ∞ {{ question.user }} </b> about <b> {{ question.title }} </b></p> 
+<p> {{ question.time }}
+</div>
+</div>
+	
+	<div class="question_text">
+    <p> {{question.question}} </p>
+	</div>
+
+  {% for reply in question.reply %}
+  <div class="reply"
+  <p> <b> {{ reply.user }} </b> </p>
+  <p> {{ reply.reply }} </p>
+</div>
+  {% endfor %}
+
+	Reply:
+	<form method='POST' action="{{ url_for('reply', question_id=question.id) }}">
+		  <input type="text" name="reply" value="">
+		  <input type="submit" value="Post">
+	</form>
+
+
+</div>
+  {% endfor %}
+</div>
+
+
+
+
+</body>
+</html>

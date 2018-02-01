@@ -1,0 +1,103 @@
+<DOCTYPE html>
+<html>
+<head>
+	<title> Neurotransmitters </title>
+	
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="../static/login.css">
+</head>
+<body class="login">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"><p class="navbartitle">DabaBrain</p></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li ><a href="/brain-anatomy">Brain mapping</a></li>
+      <li class="active"><a href="/neurotransmitters">Neurotransmitters</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li ><a href="/question"> <b>Q&A</b></a></li>
+      {%if current_user != "Not Logged In"%}
+      <li ><a href="/user"><span class="glyphicon glyphicon-user"></span>  {{ current_user.username }} </a></li>
+      <li ><a href="/logout"><span class="glyphicon glyphicon-log-in"></span>  Logout</a></li>
+      {%else%}
+      <li ><a href="/login"><span class="glyphicon glyphicon-log-in"></span>  Login</a></li>
+      
+      {%endif%}
+    </ul>
+  </div>
+</nav>
+
+
+
+
+<div class="container">
+
+
+<!--
+<ul class="navbar">
+	<li><p class="mazzbrain"><b><a href="index.html"><font size="10" color=#D9B08C>DabaBrain</font></a></b></h1></li>
+	<li class="dropdown">
+    	<a href="brain1.html" class="dropbtn">Brain Mapping</a>
+    	<div class="dropdown-content">
+	    	<a href="#forebrain">Forebrain</a>
+	    	<a href="#midbrain">Midbrain</a>
+	    	<a href="#hindbrain">Hindbrain</a>
+	    	<a href="#spinalchord">Spinal Chord</a>
+    	</div>
+    </li>
+  <li class="navbar"><a href="neurotransmitters.html">Neurotransmitters</a></li>
+
+
+ 
+</ul>
+
+<br><br><br><br><br><br><br><br>
+
+-->
+<center>
+<h1> Neurotransmitters are the brains chemical messengers. </h1>
+<h1> They are released at nerve terminals, diffuse across the synapse, and bind to receptors on the surface of the target cells.</h1>
+</center>
+<br><br>
+<h2> Here, we will briefly discuss a few of the most common neurotransmitters: </h2>
+<ol>
+<li><h2> Acetylcholine</h2>
+<p class="text"> This chemical is released by neurons connected to vouluntary muscles, causing them to contract, and by neurons that control the heartbeat. ACh is also a transmitters in many regions of the brain. Trouble with this neurotransmitter may couse fatigue and muscle weakness. In the brain it seems to be imortant for attention, memory, and sleep. </p>
+</li><br>
+<li><h2> GABA (gamma-Aminobutyric acid) </h2>
+<p class="text">The main inhabitoy neurotransmitter. (People who lack it might  experience uncontrollable movement for example. </p>
+</li><br>
+<li><h2> Dopamine </h2>
+<p class="text"> Exitetory neurotransmitter linked to movement, mental illnesses, and the endocrine system. </p>
+</li><br>
+<li><h2> Norepinephrine </h2>
+<p class="text"> Plays a role in learning and memory. It is secreted by the sympathetic nervous system to regulate  heat rate and blood pressure. It could be secreted either by sympathetc nerves or the adrenal medulla (the innermost part of the adrenal gland. </p>
+</li><br>
+<li><h2> Serotonin </h2>
+<p class="text"> Important for sleep quality, mood, depression and anxiety. It also afects emotions. It is present in the lining of the digestive tract. </p>
+</li><br>
+<li><h2>Peptides</h2>
+<p class="text"> Basically short chains of amino acids linked togetheer. This chemical is a pain killer </p>
+</li><br>
+</ol>
+
+<h1> Trophic Factors</h1>
+<p class="text"> Trophi factors are substances that are necessary for the development, function, and survival of specific groups of neurons. </p>
+
+<div class="alert alert-info alert-dismissable fade in">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Have a question? </strong> Sign in to ask!
+</div>
+
+</div>
+</body>
+
+</html>

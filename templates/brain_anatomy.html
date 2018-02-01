@@ -1,0 +1,142 @@
+
+<DOCTYPE! html>
+<html>
+<head>
+<title> forebrain midbrain hindbrain </title>
+	
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="../ststic/login.css">
+
+
+</head>
+<body class="login">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"><p class="navbartitle">DabaBrain</p></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/brain-anatomy">Brain mapping</a></li>
+      <li ><a href="/neurotransmitters">Neurotransmitters</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li ><a href="/question"> <b>Q&A</b></a></li>
+{%if current_user != "Not Logged In"%}
+      <li ><a href="/user"><span class="glyphicon glyphicon-user"></span>  {{ current_user.username }} </a></li>
+      <li ><a href="/logout"><span class="glyphicon glyphicon-log-in"></span>  Logout</a></li>
+      {%else%}
+      <li ><a href="/login"><span class="glyphicon glyphicon-log-in"></span>  Login</a></li>
+      
+      {%endif%}    </ul>
+  </div>
+</nav>
+
+
+<div class="container">
+<!--
+<ul class="navbar">
+	<li><p class="mazzbrain"><b><a href="index.html"><font size="10" color=#D9B08C>DabaBrain</font></a></b></h1></li>
+	<li class="dropdown">
+    	<a href="brain1.html" class="dropbtn">Brain Mapping</a>
+    	<div class="dropdown-content">
+	    	<a href="#forebrain">Forebrain</a>
+	    	<a href="#midbrain">Midbrain</a>
+	    	<a href="#hindbrain">Hindbrain</a>
+	    	<a href="#spinalchord">Spinal Chord</a>
+    	</div>
+    </li>
+  <li class="navbar"><a href="neurotransmitters.html">Neurotransmitters</a></li>
+
+
+ 
+</ul>
+
+-->
+
+
+
+
+
+<h1>The brain is divided into 3 major parts:</h1>
+<center><img src="../ststic/brain1pics/FMHBrain3.jpg" class="center"></center>
+
+
+<div id="forebrain">
+<h2>1. Forebrain</h2>
+	
+	<br>
+	<h3> 1. Cerebrm</h3>
+		<p class="text"> The cerebrum is associated with activities such as <b> thinking, perceiving, planning</b> and<b> understanding language</b>.<br>
+		The cerebrum is divided into two hemispheres the <b>right hemisphere</b> and the <b>left hemisphere</b>, which are connected by a bundle of fibers called the <b>corpus callosum</b></p>.
+		<img src="forebrain.png" class="right">
+			<h4 class="indent"> Cerebral cortex (Gray matter):</h4>
+			<p class="text"> The cerebral cortex is the outermost layer of the brain, most of it is folded into grooves, which increase the brains surface, allowing for inclusion of many more neurons. It is divided into 4 zones: </p> 
+			<h4 class="indent"> Frontal lobe: </h4>
+			<p class="text"> Responsible for coordinating motor movement, higher cognitive skills, and for many aspects of personality and emotional makeup.</p>
+			<h4 class="indent"> Parietal lobe </h4>
+			<p class="text"> Sensory processes, attention and language. Its right side has to do with navigating spaces, and its left side is responsible for spoken/written language.</p>
+			<h4 class="indent"> Occipital lobe </h4>
+			<p class="text"> Visual information (shapes and colors)</p>
+			<h4 class="indent"> Temporal lobe </h4>
+			<p class="text"> Auditory information + integrating information from the other senses. </p>
+
+	<h3> 2. Basal ganglia (cerebral nuclei) </h3>
+		<p class="text"> coordinate muscle movement </p>
+	<h3> 3. Thalamus</h3>
+		<p class="text"> prioritizes and passes sensory information to cerebral coretex</p>
+	<h3> 4. Hypothalamus</h3>
+		<p class="text"> Appetites and defensive behaviors </p>
+<br>
+</div>
+<div id="midbrain">
+<h2>2. Midbrain</h2>
+	<p class="text"> Consists of two pairs of small hills called colliculi play a critical role in visual and auditory reflexes. </p>
+	<img src="midbrain.png">
+<br>
+</div>
+<div id="hindbrain">
+<img src="hindbrain.png" class="right">
+<h2>3. Hindbrain</h2>
+	<h3> Pons and Medulla oblongata</h3>
+	
+	<p class="text"> Control respiration, heart rythms and blood glucose levels. </p>
+	<h3> Cerebellum</h3>
+	<p class="text"> Also has 2 hemispheres which help control movement, and cognetive processest that require percise timing.</p>
+
+<br><br><br><br><br><br><br><br><br>
+</div>
+
+<div id="spinalchord">
+<img src="spinalcord.jpg" class="right" height="260" width="200">
+<h2> 4. Spinal cord</h2> 
+<p class="text"> Recives sensory information and uses it for reflex responses. Also works through voluntary commands from the cerebrum.</p>
+<br><br><br><br><br><br><br><br><br><br><br>
+</div>
+<br>
+
+<center>
+<a href="index.html"><img src="brainimg.gif" align="middle"></a>
+</center>
+
+<audio controls>
+  <source src="Catecholamines.ogg" type="audio/ogg">
+  <source src="Catecholamines.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<div class="alert alert-info alert-dismissable fade in">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Have a question? </strong> Sign in to ask!
+</div>
+
+
+</div>
+</body>
+
+</html>
