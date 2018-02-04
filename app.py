@@ -7,7 +7,7 @@ import time
 
 app = Flask(__name__)
 app.debug = True # This line helps us see what's going on when there's ;an error!
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://mtfhkoorbaejkj:34a0e9e67baee29c0c860a9823647b4470b403052a5931bc7d0e981d784fae16@ec2-50-16-231-2.compute-1.amazonaws.com:5432/dbj3vbbsjfgepd                                                                                                                   v cc'
 db = SQLAlchemy(app)
 
 current_user =  "Not Logged In"
